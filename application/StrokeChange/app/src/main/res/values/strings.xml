@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">StrokeChange</string>
+    <string name="app_name">Object Detection Codelab</string>
     <string name="tv_take_photo">Take photo</string>
-    <string name="tv_placeholder">Object detection demo</string>
     <string name="tv_description">Select a preset image or take a new photo</string>
+    <string name="tv_placeholder">Object detection demo</string>
+    <string name="eye_regression_model">eye-regression.tflite</string>
+    <string name="mouth_regression_model">mouth-regression.tflite</string>
+    <string name="object_detector_model">eye-mouth-detector.tflite</string>
 </resources>

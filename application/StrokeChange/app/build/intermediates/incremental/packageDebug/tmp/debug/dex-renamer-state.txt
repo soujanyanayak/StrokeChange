@@ -1,0 +1,7 @@
+#Wed Apr 12 21:20:51 PDT 2023
+base.1=/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex
+path.1=classes.dex
+base.0=/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex
