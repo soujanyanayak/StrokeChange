@@ -1,0 +1,237 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:2:1-37:12
+INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:2:1-37:12
+INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:2:1-37:12
+INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:2:1-37:12
+MERGED from [androidx.core:core-ktx:1.3.2] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/e58f6641f0578802a6720ab419c628e0/jetified-core-ktx-1.3.2/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.3.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/16754d673cd514afa02ea011dc78dc53/jetified-lifecycle-runtime-ktx-2.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.material:material:1.3.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/3181a5a230173e134995bbcc86f80951/material-1.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/ba0e093ab9feaac534db9609fbf48161/constraintlayout-2.0.4/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/182c6f7fa206fcf9dfa64f742b56b7ac/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.2] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/afd5b9158ef58c1e7d7b53a2fb1e4152/exifinterface-1.3.2/AndroidManifest.xml:17:1-24:12
+MERGED from [org.tensorflow:tensorflow-lite-task-vision:0.3.1] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/1e614c6b92970d5bafb196fa190a862b/jetified-tensorflow-lite-task-vision-0.3.1/AndroidManifest.xml:2:1-9:12
+MERGED from [org.tensorflow:tensorflow-lite:2.12.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/de4721a87694559284c644a0c34a63fe/jetified-tensorflow-lite-2.12.0/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/0b87ab1084a68f31fe387bc7a6868a5f/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/e4258d45b95ac429e5da10964a5469fd/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/d5bdf2f2fd65b8fcff42e983a0850526/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/cbe165716a1da158b27c45f9619521d6/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/af6faebdfaee8ede67ca356f9981a994/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/244af364c4722f7089dd9dc8d9f9e991/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.2.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/79b2779e8fbf8fbcb063f9f9e4e67056/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/9a01dfeb8289247486dbf03ddd941979/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/b7ae13ed11f3404e11a0bb746492733b/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/3b05e92a0b4e3112ba851c915a140a05/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/4766ec18f97cab2ef017ece40ecc56c8/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/c8b5df6ac502237992eb101dc66d4842/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/e7b5ad21264fade60efe6d71aecdd89c/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/a6504399b3add68ab1d1cfa33877b7b9/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/c3573009bfe2f3959f59564cb09bec83/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.3.2] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/0e4b20e0b5a803bf1b9fa072c81c11da/core-1.3.2/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/6e169f0fffbca92a5aa037f21ef6507d/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/036e7ee8aa9548d79b7d25c6ad0be62d/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/45a4c5f300dafea1fd33d3912a7c3db8/lifecycle-runtime-2.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/35aa15676b15e71d7eeb4ddfa208956d/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/aad614d97ae7fbea1f0f8cb617937cc2/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/dc76fd0795a9297accd6592943790706/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/08bd8de163e4dce53d513b3cb9b25234/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/9efe22cf0082936d2f93e4b2c28bc880/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/a8fbf1b9afd1303b193699773955965b/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/34bb78b8cebf54a661c5dc71920c2928/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/b8a526d91d1433f80bc255868b7dd72f/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/4dfd89864b23f573304fc4d6326895a2/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/206106f115d834f1282b530daecf9d84/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/ccdffb566716068309d636fd7dba6a92/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [org.tensorflow:tensorflow-lite-task-base:0.3.1] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/8cda7df1ef49278e0a1df8b4bb3fca14/jetified-tensorflow-lite-task-base-0.3.1/AndroidManifest.xml:2:1-6:12
+MERGED from [org.tensorflow:tensorflow-lite-support-api:0.3.1] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/7714d511a0321f7de14a7cc418e0dad0/jetified-tensorflow-lite-support-api-0.3.1/AndroidManifest.xml:2:1-5:12
+MERGED from [org.tensorflow:tensorflow-lite-api:2.12.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/122e49596a72757354359f96dc74d731/jetified-tensorflow-lite-api-2.12.0/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/0aba3cab5d5925204c35929fa14589cb/jetified-image-1.0.0-beta1/AndroidManifest.xml:2:1-9:12
+INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:2:1-37:12
+INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:2:1-37:12
+INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:2:1-37:12
+	package
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:3:5-54
+		INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:2:1-37:12
+		INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:2:1-37:12
+		INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:2:11-69
+queries
+ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:5:5-9:15
+intent#action:name:android.media.action.IMAGE_CAPTURE
+ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:6:9-8:18
+action#android.media.action.IMAGE_CAPTURE
+ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:7:13-73
+	android:name
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:7:21-70
+application
+ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:11:5-35:19
+MERGED from [com.google.android.material:material:1.3.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/3181a5a230173e134995bbcc86f80951/material-1.3.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.3.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/3181a5a230173e134995bbcc86f80951/material-1.3.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/ba0e093ab9feaac534db9609fbf48161/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/ba0e093ab9feaac534db9609fbf48161/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
+MERGED from [org.tensorflow:tensorflow-lite:2.12.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/de4721a87694559284c644a0c34a63fe/jetified-tensorflow-lite-2.12.0/AndroidManifest.xml:9:5-20
+MERGED from [org.tensorflow:tensorflow-lite:2.12.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/de4721a87694559284c644a0c34a63fe/jetified-tensorflow-lite-2.12.0/AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.3.2] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/0e4b20e0b5a803bf1b9fa072c81c11da/core-1.3.2/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.3.2] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/0e4b20e0b5a803bf1b9fa072c81c11da/core-1.3.2/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/35aa15676b15e71d7eeb4ddfa208956d/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/35aa15676b15e71d7eeb4ddfa208956d/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [org.tensorflow:tensorflow-lite-task-base:0.3.1] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/8cda7df1ef49278e0a1df8b4bb3fca14/jetified-tensorflow-lite-task-base-0.3.1/AndroidManifest.xml:4:4-5:18
+MERGED from [org.tensorflow:tensorflow-lite-task-base:0.3.1] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/8cda7df1ef49278e0a1df8b4bb3fca14/jetified-tensorflow-lite-task-base-0.3.1/AndroidManifest.xml:4:4-5:18
+MERGED from [org.tensorflow:tensorflow-lite-api:2.12.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/122e49596a72757354359f96dc74d731/jetified-tensorflow-lite-api-2.12.0/AndroidManifest.xml:9:5-20
+MERGED from [org.tensorflow:tensorflow-lite-api:2.12.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/122e49596a72757354359f96dc74d731/jetified-tensorflow-lite-api-2.12.0/AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/0aba3cab5d5925204c35929fa14589cb/jetified-image-1.0.0-beta1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/0aba3cab5d5925204c35929fa14589cb/jetified-image-1.0.0-beta1/AndroidManifest.xml:7:5-20
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.3.2] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/0e4b20e0b5a803bf1b9fa072c81c11da/core-1.3.2/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:16:9-35
+	android:label
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:14:9-41
+	android:roundIcon
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:15:9-54
+	android:icon
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:13:9-43
+	android:allowBackup
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:12:9-35
+	android:theme
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:17:9-53
+activity#org.tensorflow.codelabs.objectdetection.MainActivity
+ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:18:9-24:20
+	android:name
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:18:19-86
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:19:13-23:29
+action#android.intent.action.MAIN
+ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:20:17-69
+	android:name
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:20:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:22:27-74
+provider#androidx.core.content.FileProvider
+ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:26:9-34:20
+	android:grantUriPermissions
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:30:13-47
+	android:authorities
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:28:13-87
+	android:exported
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:29:13-37
+	android:name
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:27:13-62
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:31:13-33:54
+	android:resource
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:33:17-51
+	android:name
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:32:17-67
+uses-sdk
+INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml
+INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml
+MERGED from [androidx.core:core-ktx:1.3.2] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/e58f6641f0578802a6720ab419c628e0/jetified-core-ktx-1.3.2/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.3.2] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/e58f6641f0578802a6720ab419c628e0/jetified-core-ktx-1.3.2/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.3.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/16754d673cd514afa02ea011dc78dc53/jetified-lifecycle-runtime-ktx-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.3.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/16754d673cd514afa02ea011dc78dc53/jetified-lifecycle-runtime-ktx-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.3.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/3181a5a230173e134995bbcc86f80951/material-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.3.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/3181a5a230173e134995bbcc86f80951/material-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/ba0e093ab9feaac534db9609fbf48161/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/ba0e093ab9feaac534db9609fbf48161/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/182c6f7fa206fcf9dfa64f742b56b7ac/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/182c6f7fa206fcf9dfa64f742b56b7ac/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.2] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/afd5b9158ef58c1e7d7b53a2fb1e4152/exifinterface-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.2] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/afd5b9158ef58c1e7d7b53a2fb1e4152/exifinterface-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [org.tensorflow:tensorflow-lite-task-vision:0.3.1] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/1e614c6b92970d5bafb196fa190a862b/jetified-tensorflow-lite-task-vision-0.3.1/AndroidManifest.xml:5:5-7:41
+MERGED from [org.tensorflow:tensorflow-lite-task-vision:0.3.1] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/1e614c6b92970d5bafb196fa190a862b/jetified-tensorflow-lite-task-vision-0.3.1/AndroidManifest.xml:5:5-7:41
+MERGED from [org.tensorflow:tensorflow-lite:2.12.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/de4721a87694559284c644a0c34a63fe/jetified-tensorflow-lite-2.12.0/AndroidManifest.xml:6:5-7:38
+MERGED from [org.tensorflow:tensorflow-lite:2.12.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/de4721a87694559284c644a0c34a63fe/jetified-tensorflow-lite-2.12.0/AndroidManifest.xml:6:5-7:38
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/0b87ab1084a68f31fe387bc7a6868a5f/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/0b87ab1084a68f31fe387bc7a6868a5f/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/e4258d45b95ac429e5da10964a5469fd/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/e4258d45b95ac429e5da10964a5469fd/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/d5bdf2f2fd65b8fcff42e983a0850526/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/d5bdf2f2fd65b8fcff42e983a0850526/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/cbe165716a1da158b27c45f9619521d6/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/cbe165716a1da158b27c45f9619521d6/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/af6faebdfaee8ede67ca356f9981a994/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/af6faebdfaee8ede67ca356f9981a994/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/244af364c4722f7089dd9dc8d9f9e991/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/244af364c4722f7089dd9dc8d9f9e991/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.2.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/79b2779e8fbf8fbcb063f9f9e4e67056/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/79b2779e8fbf8fbcb063f9f9e4e67056/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/9a01dfeb8289247486dbf03ddd941979/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/9a01dfeb8289247486dbf03ddd941979/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/b7ae13ed11f3404e11a0bb746492733b/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/b7ae13ed11f3404e11a0bb746492733b/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/3b05e92a0b4e3112ba851c915a140a05/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/3b05e92a0b4e3112ba851c915a140a05/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/4766ec18f97cab2ef017ece40ecc56c8/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/4766ec18f97cab2ef017ece40ecc56c8/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/c8b5df6ac502237992eb101dc66d4842/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/c8b5df6ac502237992eb101dc66d4842/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/e7b5ad21264fade60efe6d71aecdd89c/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/e7b5ad21264fade60efe6d71aecdd89c/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/a6504399b3add68ab1d1cfa33877b7b9/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/a6504399b3add68ab1d1cfa33877b7b9/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/c3573009bfe2f3959f59564cb09bec83/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/c3573009bfe2f3959f59564cb09bec83/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.3.2] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/0e4b20e0b5a803bf1b9fa072c81c11da/core-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.2] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/0e4b20e0b5a803bf1b9fa072c81c11da/core-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/6e169f0fffbca92a5aa037f21ef6507d/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/6e169f0fffbca92a5aa037f21ef6507d/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/036e7ee8aa9548d79b7d25c6ad0be62d/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/036e7ee8aa9548d79b7d25c6ad0be62d/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/45a4c5f300dafea1fd33d3912a7c3db8/lifecycle-runtime-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/45a4c5f300dafea1fd33d3912a7c3db8/lifecycle-runtime-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/35aa15676b15e71d7eeb4ddfa208956d/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/35aa15676b15e71d7eeb4ddfa208956d/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/aad614d97ae7fbea1f0f8cb617937cc2/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/aad614d97ae7fbea1f0f8cb617937cc2/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/dc76fd0795a9297accd6592943790706/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/dc76fd0795a9297accd6592943790706/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/08bd8de163e4dce53d513b3cb9b25234/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/08bd8de163e4dce53d513b3cb9b25234/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/9efe22cf0082936d2f93e4b2c28bc880/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/9efe22cf0082936d2f93e4b2c28bc880/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/a8fbf1b9afd1303b193699773955965b/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/a8fbf1b9afd1303b193699773955965b/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/34bb78b8cebf54a661c5dc71920c2928/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/34bb78b8cebf54a661c5dc71920c2928/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/b8a526d91d1433f80bc255868b7dd72f/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/b8a526d91d1433f80bc255868b7dd72f/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/4dfd89864b23f573304fc4d6326895a2/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/4dfd89864b23f573304fc4d6326895a2/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/206106f115d834f1282b530daecf9d84/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/206106f115d834f1282b530daecf9d84/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/ccdffb566716068309d636fd7dba6a92/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/ccdffb566716068309d636fd7dba6a92/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [org.tensorflow:tensorflow-lite-support-api:0.3.1] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/7714d511a0321f7de14a7cc418e0dad0/jetified-tensorflow-lite-support-api-0.3.1/AndroidManifest.xml:4:3-71
+MERGED from [org.tensorflow:tensorflow-lite-support-api:0.3.1] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/7714d511a0321f7de14a7cc418e0dad0/jetified-tensorflow-lite-support-api-0.3.1/AndroidManifest.xml:4:3-71
+MERGED from [org.tensorflow:tensorflow-lite-api:2.12.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/122e49596a72757354359f96dc74d731/jetified-tensorflow-lite-api-2.12.0/AndroidManifest.xml:6:5-7:38
+MERGED from [org.tensorflow:tensorflow-lite-api:2.12.0] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/122e49596a72757354359f96dc74d731/jetified-tensorflow-lite-api-2.12.0/AndroidManifest.xml:6:5-7:38
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/0aba3cab5d5925204c35929fa14589cb/jetified-image-1.0.0-beta1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/soujanyanayak/.gradle/caches/transforms-2/files-2.1/0aba3cab5d5925204c35929fa14589cb/jetified-image-1.0.0-beta1/AndroidManifest.xml:5:5-44
+INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml
+INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml
+		ADDED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+IMPLIED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:2:1-37:12 reason: src.java.org.tensorflow.lite.task.core has a targetSdkVersion < 4
+uses-permission#android.permission.READ_PHONE_STATE
+IMPLIED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:2:1-37:12 reason: src.java.org.tensorflow.lite.task.core has a targetSdkVersion < 4
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+IMPLIED from /Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:2:1-37:12 reason: src.java.org.tensorflow.lite.task.core requested WRITE_EXTERNAL_STORAGE
