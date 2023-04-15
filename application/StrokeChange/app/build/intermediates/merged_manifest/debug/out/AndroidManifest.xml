@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.tensorflow.codelabs.objectdetection"
+    package="org.tensorflow.strokechange.objectdetection"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -25,11 +25,12 @@
         android:extractNativeLibs="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.ObjectDetection" >
-        <activity android:name="org.tensorflow.codelabs.objectdetection.MainActivity" >
+        <activity android:name="org.tensorflow.strokechange.objectdetection.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,7 +40,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="org.tensorflow.codelabs.objectdetection.fileprovider"
+            android:authorities="org.tensorflow.strokechange.objectdetection.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data

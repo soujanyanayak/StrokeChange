@@ -1,4 +1,6 @@
-org/tensorflow/codelabs/objectdetection/BuildConfig.java
- org.tensorflow.codelabs.objectdetection.BuildConfig
-org/tensorflow/codelabs/Regression/EyeMouthRegression.java
- org.tensorflow.codelabs.Regression.EyeMouthRegression
+org/tensorflow/strokechange/objectdetection/BuildConfig.java
+ org.tensorflow.strokechange.objectdetection.BuildConfig
+org/tensorflow/strokechange/Regression/EyeMouthRegression.java
+ org.tensorflow.strokechange.Regression.EyeMouthRegression
+org/tensorflow/strokechange/operations/Actions.java
+ org.tensorflow.strokechange.operations.Actions

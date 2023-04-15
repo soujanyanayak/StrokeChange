@@ -4,7 +4,7 @@
     "type": "PACKAGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "org.tensorflow.codelabs.objectdetection",
+  "applicationId": "org.tensorflow.strokechange.objectdetection",
   "variantName": "debug",
   "elements": [
     {
