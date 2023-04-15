@@ -1,4 +1,4 @@
-org.tensorflow.codelabs.objectdetection
+org.tensorflow.strokechange.objectdetection
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -1992,6 +1992,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id save_image
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -2354,6 +2355,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string save_image
 string search_menu_title
 string status_bar_notification_info_overflow
 string tv_description

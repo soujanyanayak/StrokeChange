@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="org.tensorflow.codelabs.objectdetection"
+3    package="org.tensorflow.strokechange.objectdetection"
 4    android:versionCode="1"
 5    android:versionName="1.0" >
 6
@@ -25,7 +25,7 @@
 19    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 20
 21    <application
-21-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:11:5-35:19
+21-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:11:5-36:19
 22        android:allowBackup="true"
 22-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:12:9-35
 23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -36,45 +36,47 @@
 26-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:13:9-43
 27        android:label="@string/app_name"
 27-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:14:9-41
-28        android:roundIcon="@mipmap/ic_launcher_round"
-28-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:15:9-54
-29        android:supportsRtl="true"
-29-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:16:9-35
-30        android:testOnly="true"
-31        android:theme="@style/Theme.ObjectDetection" >
-31-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:17:9-53
-32        <activity android:name="org.tensorflow.codelabs.objectdetection.MainActivity" >
-32-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:18:9-24:20
-32-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:18:19-86
-33            <intent-filter>
-33-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:19:13-23:29
-34                <action android:name="android.intent.action.MAIN" />
-34-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:20:17-69
-34-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:20:25-66
-35
-36                <category android:name="android.intent.category.LAUNCHER" />
-36-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:22:17-77
-36-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:22:27-74
-37            </intent-filter>
-38        </activity>
-39
-40        <provider
-40-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:26:9-34:20
-41            android:name="androidx.core.content.FileProvider"
-41-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:27:13-62
-42            android:authorities="org.tensorflow.codelabs.objectdetection.fileprovider"
-42-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:28:13-87
-43            android:exported="false"
-43-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:29:13-37
-44            android:grantUriPermissions="true" >
-44-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:30:13-47
-45            <meta-data
-45-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:31:13-33:54
-46                android:name="android.support.FILE_PROVIDER_PATHS"
-46-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:32:17-67
-47                android:resource="@xml/file_paths" />
-47-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:33:17-51
-48        </provider>
-49    </application>
-50
-51</manifest>
+28        android:requestLegacyExternalStorage="true"
+28-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:18:9-52
+29        android:roundIcon="@mipmap/ic_launcher_round"
+29-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:15:9-54
+30        android:supportsRtl="true"
+30-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:16:9-35
+31        android:testOnly="true"
+32        android:theme="@style/Theme.ObjectDetection" >
+32-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:17:9-53
+33        <activity android:name="org.tensorflow.strokechange.objectdetection.MainActivity" >
+33-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:19:9-25:20
+33-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:19:19-90
+34            <intent-filter>
+34-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:20:13-24:29
+35                <action android:name="android.intent.action.MAIN" />
+35-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:21:17-69
+35-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:21:25-66
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:23:17-77
+37-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:23:27-74
+38            </intent-filter>
+39        </activity>
+40
+41        <provider
+41-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:27:9-35:20
+42            android:name="androidx.core.content.FileProvider"
+42-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:28:13-62
+43            android:authorities="org.tensorflow.strokechange.objectdetection.fileprovider"
+43-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:29:13-91
+44            android:exported="false"
+44-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:30:13-37
+45            android:grantUriPermissions="true" >
+45-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:31:13-47
+46            <meta-data
+46-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:32:13-34:54
+47                android:name="android.support.FILE_PROVIDER_PATHS"
+47-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:33:17-67
+48                android:resource="@xml/file_paths" />
+48-->/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/src/main/AndroidManifest.xml:34:17-51
+49        </provider>
+50    </application>
+51
+52</manifest>
