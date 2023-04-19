@@ -46,4 +46,7 @@ dependencies {
     // TFLite
     implementation 'org.tensorflow:tensorflow-lite-task-vision:0.3.1'
     implementation 'org.tensorflow:tensorflow-lite:+'
+
+    // Graph
+    implementation 'com.jjoe64:graphview:4.2.2'
 }
