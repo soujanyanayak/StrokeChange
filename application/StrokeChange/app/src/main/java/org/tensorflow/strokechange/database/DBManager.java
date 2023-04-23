@@ -7,6 +7,9 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class DBManager {
 
@@ -31,9 +34,13 @@ public class DBManager {
     }
 
     public void insert(double eyeSeverity, double mouthSeverity) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String strDate = sdf.format(new Date());
+
         ContentValues contentValue = new ContentValues();
         contentValue.put(DatabaseHelper.EyeSeverity, eyeSeverity);
         contentValue.put(DatabaseHelper.MouthSeverity, mouthSeverity);
+        contentValue.put(DatabaseHelper.DateTime,strDate);
         database.insert(DatabaseHelper.TABLE_NAME, null, contentValue);
     }
 

@@ -6,14 +6,25 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.jjoe64.graphview.GraphView
+import com.jjoe64.graphview.GridLabelRenderer
 import com.jjoe64.graphview.LegendRenderer
+import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter
 import com.jjoe64.graphview.series.DataPoint
 import com.jjoe64.graphview.series.LineGraphSeries
+import com.jjoe64.graphview.series.OnDataPointTapListener
 import org.tensorflow.strokechange.database.DBManager
 import org.tensorflow.strokechange.database.StrokeReport
 import org.tensorflow.strokechange.objectdetection.R
+import java.math.RoundingMode
+import java.text.DateFormat
+import java.text.DecimalFormat
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.time.ExperimentalTime
+
 
 /**
  * A simple [Fragment] subclass.
@@ -30,6 +41,7 @@ class Report : Fragment(R.layout.fragment_report) {
         }
     }
 
+    @OptIn(ExperimentalTime::class)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,10 +55,14 @@ class Report : Fragment(R.layout.fragment_report) {
         var dbManager = DBManager(this.context)
         dbManager.open()
         val cursor: Cursor = dbManager.fetch()
-        var xAxis: MutableList<String> = ArrayList()
+        var xAxis: MutableList<Date> = ArrayList()
         var yAxis1: MutableList<Double> = ArrayList()
         var yAxis2: MutableList<Double> = ArrayList()
 
+        // SC: Convert java.sql.datetime to java.util.datetime to add it to datapoint.
+        // SC: Set timezone to avoid default timezone
+        val formatter: DateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+        formatter.setTimeZone(TimeZone.getTimeZone("GMT-7"))
         while (cursor.moveToNext()) {
 
             var index: Int
@@ -59,24 +75,24 @@ class Report : Fragment(R.layout.fragment_report) {
             var sr = StrokeReport(dateTime,eye,mouth)
             yAxis1.add(eye)
             yAxis2.add(mouth)
-            xAxis.add(dateTime)
+            formatter.parse(dateTime)?.let { xAxis.add(it) }
         }
 
         dbManager.close()
 
-        if (xAxis.size == 0){
+        if (yAxis1.size < 1 && yAxis2.size < 1){
             return rootView
         }
 
         var datapoints: Array<DataPoint?> = arrayOfNulls<DataPoint>(yAxis1.size)
 
         for(i in 0 until yAxis1.size){
-            datapoints[i]=(DataPoint(i.toDouble(),yAxis1[i]))
+            datapoints[i]=(DataPoint(xAxis[i],yAxis1[i]))
         }
         val series1: LineGraphSeries<DataPoint?> = LineGraphSeries(datapoints)
 
         for(i in 0 until yAxis2.size){
-            datapoints[i]=(DataPoint(i.toDouble(),yAxis2[i]))
+            datapoints[i]=(DataPoint(xAxis[i],yAxis2[i]))
         }
 
 
@@ -110,21 +126,38 @@ class Report : Fragment(R.layout.fragment_report) {
             graphView.viewport.isScalable = true
 
             // on below line we are setting scalable y
-            //graphView.viewport.setScalableY(true)
+            graphView.viewport.setScalableY(true)
 
             // on below line we are setting scrollable y
-            graphView.viewport.setScrollableY(true)
+            graphView.getViewport().setScrollableY(true)
+            graphView.getViewport().setXAxisBoundsManual(true)
+            graphView.getViewport().setYAxisBoundsManual(true)
+            graphView.getViewport().setMaxY(10.0)
+            graphView.getViewport().setMinY(0.0)
+            datapoints[datapoints.size-1]?.let { graphView.getViewport().setMaxX(it.x) }
+            datapoints[0]?.let { graphView.getViewport().setMinX(it.x) }
+
+
+//            graphView.getViewport().scrollToEnd()
+
 
 
             // styling legend
+            graphView.getGridLabelRenderer().setGridStyle( GridLabelRenderer.GridStyle.NONE );
             graphView.getLegendRenderer().setVisible(true);
-            graphView.getGridLabelRenderer().setVerticalAxisTitleTextSize(40F);
+            graphView.getGridLabelRenderer().setVerticalAxisTitleTextSize(55F);
             graphView.getGridLabelRenderer().setVerticalAxisTitle("Severity");
-            graphView.getGridLabelRenderer().setHorizontalAxisTitleTextSize(40F);
-            graphView.getGridLabelRenderer().setHorizontalAxisTitle("Images");
+            graphView.getGridLabelRenderer().setHorizontalAxisTitleTextSize(55F);
+            graphView.getGridLabelRenderer().setHorizontalAxisTitle("Oldest to Recent Samples");
+            graphView.getGridLabelRenderer().setHorizontalLabelsAngle(90)
+            graphView.getGridLabelRenderer().setLabelFormatter(DateAsXAxisLabelFormatter( context,formatter));
+            graphView.getGridLabelRenderer().setNumHorizontalLabels(datapoints.size);
+
             graphView.getLegendRenderer().setTextSize(25F);
             graphView.getLegendRenderer().setBackgroundColor(Color.argb(150, 50, 0, 0));
             graphView.getLegendRenderer().setTextColor(Color.WHITE);
+
+            graphView.getGridLabelRenderer().isHorizontalLabelsVisible = false
 
             graphView.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
             graphView.getLegendRenderer().setMargin(30);
@@ -139,6 +172,27 @@ class Report : Fragment(R.layout.fragment_report) {
             graphView.getViewport().setBackgroundColor(Color.argb(255, 222, 222, 222));
             graphView.getViewport().setDrawBorder(true);
             graphView.getViewport().setBorderColor(Color.BLUE);
+            graphView.getViewport().setXAxisBoundsManual(true);
+
+            val df = DecimalFormat("#.##")
+            df.roundingMode = RoundingMode.DOWN
+
+            series1.setOnDataPointTapListener(OnDataPointTapListener { series1, dataPoint ->
+                Toast.makeText(
+                    this.context,
+                    "Severity: " + dataPoint.y+ "\nDateTime: " + formatter.format(java.sql.Date(dataPoint.x.toLong()).time),
+                    Toast.LENGTH_LONG
+                ).show()
+            })
+
+            series2.setOnDataPointTapListener(OnDataPointTapListener { series2, dataPoint ->
+                Toast.makeText(
+                    this.context,
+                    "Severity: " + dataPoint.y + "\nDateTime: " + formatter.format(java.sql.Date(dataPoint.x.toLong()).time),
+                    Toast.LENGTH_LONG
+                ).show()
+            })
+
 
 
 
