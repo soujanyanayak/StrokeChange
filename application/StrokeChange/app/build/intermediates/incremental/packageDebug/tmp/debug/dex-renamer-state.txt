@@ -1,4 +1,4 @@
-#Fri Apr 14 16:41:02 PDT 2023
+#Wed Apr 19 16:04:25 PDT 2023
 base.1=/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex
 path.1=classes.dex
 base.0=/Users/soujanyanayak/Development/StrokeChange/StrokeChange/application/StrokeChange/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
