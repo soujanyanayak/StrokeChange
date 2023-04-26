@@ -63,20 +63,24 @@ class Report : Fragment(R.layout.fragment_report) {
         // SC: Set timezone to avoid default timezone
         val formatter: DateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
         formatter.setTimeZone(TimeZone.getTimeZone("GMT-7"))
-        while (cursor.moveToNext()) {
+        if (cursor.moveToFirst()){
+            do{
 
-            var index: Int
-            index = cursor.getColumnIndexOrThrow("datetime")
-            val dateTime = cursor.getString(index)
-            index = cursor.getColumnIndexOrThrow("eyeSeverity")
-            val eye = cursor.getDouble(index)
-            index = cursor.getColumnIndexOrThrow("mouthSeverity")
-            val mouth = cursor.getDouble(index)
-            var sr = StrokeReport(dateTime,eye,mouth)
-            yAxis1.add(eye)
-            yAxis2.add(mouth)
-            formatter.parse(dateTime)?.let { xAxis.add(it) }
+                var index: Int
+                index = cursor.getColumnIndexOrThrow("datetime")
+                val dateTime = cursor.getString(index)
+                index = cursor.getColumnIndexOrThrow("eyeSeverity")
+                val eye = cursor.getDouble(index)
+                index = cursor.getColumnIndexOrThrow("mouthSeverity")
+                val mouth = cursor.getDouble(index)
+                var sr = StrokeReport(dateTime,eye,mouth)
+                yAxis1.add(eye)
+                yAxis2.add(mouth)
+                formatter.parse(dateTime)?.let { xAxis.add(it) }
+            }while (cursor.moveToNext())
         }
+
+
 
         dbManager.close()
 
