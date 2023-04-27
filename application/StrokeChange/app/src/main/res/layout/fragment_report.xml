@@ -9,9 +9,16 @@
     <com.jjoe64.graphview.GraphView
         android:id="@+id/graphView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="600dp"
         android:layout_gravity="center|bottom">
 
     </com.jjoe64.graphview.GraphView>
 
+    <Button
+        android:id="@+id/save_pdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save_pdf"
+        android:layout_gravity="center|top">
+    </Button>
 </FrameLayout>

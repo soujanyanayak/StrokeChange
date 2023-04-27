@@ -18,4 +18,5 @@
     <string name="info_home_title">HOME</string>
     <string name="info_report_title">REPORT</string>
     <string name="info_report">You can view the graph of Severity under \'Report\'. The graph contains severity of Eye and Mouth based on images captured till date. This will be helpful in noticing the changes in stroke over a period of time. If the slope is increasing then Stroke is getting severe and if the slope is dropping then you are recovering. You can also take a screenshot of this report and share with your doctor.</string>
+    <string name="save_pdf">Save as Pdf</string>
 </resources>

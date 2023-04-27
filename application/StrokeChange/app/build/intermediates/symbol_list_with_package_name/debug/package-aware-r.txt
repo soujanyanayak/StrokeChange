@@ -2024,6 +2024,7 @@ id row_index_key
 id save_image
 id save_non_transition_alpha
 id save_overlay_view
+id save_pdf
 id sawtooth
 id scale
 id screen
@@ -2411,6 +2412,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string report
 string save_image
+string save_pdf
 string search_menu_title
 string status_bar_notification_info_overflow
 string tag_line
