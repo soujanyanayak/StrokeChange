@@ -1,12 +1,17 @@
 package org.tensorflow.strokechange
 
 import android.database.Cursor
-import android.graphics.Color
+import android.graphics.*
+import android.graphics.pdf.PdfDocument
+import android.graphics.pdf.PdfDocument.PageInfo
 import android.os.Bundle
+import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.jjoe64.graphview.GraphView
 import com.jjoe64.graphview.GridLabelRenderer
@@ -18,6 +23,9 @@ import com.jjoe64.graphview.series.OnDataPointTapListener
 import org.tensorflow.strokechange.database.DBManager
 import org.tensorflow.strokechange.database.StrokeReport
 import org.tensorflow.strokechange.objectdetection.R
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
 import java.math.RoundingMode
 import java.text.DateFormat
 import java.text.DecimalFormat
@@ -33,6 +41,7 @@ import kotlin.time.ExperimentalTime
  */
 class Report : Fragment(R.layout.fragment_report) {
     private lateinit var graphView : GraphView
+    private lateinit var button : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +60,8 @@ class Report : Fragment(R.layout.fragment_report) {
 
         var rootView = inflater.inflate(R.layout.fragment_report, container, false)
         graphView = rootView.findViewById(R.id.graphView)
+
+        button = rootView.findViewById(R.id.save_pdf)
 
         var dbManager = DBManager(this.context)
         dbManager.open()
@@ -119,7 +130,7 @@ class Report : Fragment(R.layout.fragment_report) {
             // on below line adding animation
             graphView.animate()
 
-            graphView.title = "Severity Report"
+            //graphView.title = "Severity Report"
 
 
             // on below line we are setting scrollable
@@ -202,6 +213,21 @@ class Report : Fragment(R.layout.fragment_report) {
 
         }
 
+        button.setOnClickListener(){
+            val bitmap = Bitmap.createBitmap(graphView!!.width, graphView!!.height, Bitmap.Config.ARGB_8888)
+            val canvas = Canvas(bitmap)
+
+            // Draw the View into the Canvas
+
+            // Draw the View into the Canvas
+            graphView!!.draw(canvas)
+
+            // Return the resulting Bitmap
+
+            // Return the resulting Bitmap
+            this.generatePDF(bitmap,yAxis1,yAxis2,xAxis)
+        }
+
         return rootView
     }
 
@@ -222,5 +248,117 @@ class Report : Fragment(R.layout.fragment_report) {
 
                 }
             }
+    }
+
+    private fun generatePDF(
+        bitmap: Bitmap,
+        yAxis1: MutableList<Double>,
+        yAxis2: MutableList<Double>,
+        xAxis: MutableList<Date>
+    ) {
+        // creating an object variable
+        // for our PDF document.
+        val pdfDocument = PdfDocument()
+
+        val pageHeight = 1120
+        val pagewidth = 792
+
+        // two variables for paint "paint" is used
+        // for drawing shapes and we will use "title"
+        // for adding text in our PDF file.
+        val paint = Paint()
+        val title = Paint()
+
+        // we are adding page info to our PDF file
+        // in which we will be passing our pageWidth,
+        // pageHeight and number of pages and after that
+        // we are calling it to create our PDF.
+        val mypageInfo = PageInfo.Builder(pagewidth, pageHeight, 1).create()
+
+        // below line is used for setting
+        // start page for our PDF file.
+        val myPage = pdfDocument.startPage(mypageInfo)
+
+        // creating a variable for canvas
+        // from our page of PDF.
+        val canvas: Canvas = myPage.canvas
+
+        // below line is used to draw our image on our PDF file.
+        // the first parameter of our drawbitmap method is
+        // our bitmap
+        // second parameter is position from left
+        // third parameter is position from top and last
+        // one is our variable for paint.
+        canvas.drawBitmap(bitmap, null , Rect(10,150,500,800),paint)
+        //canvas.drawBitmap(bitmap,bitmap.height.toFloat(),bitmap.width.toFloat(),paint)
+
+        // below line is used for adding typeface for
+        // our text which we will be adding in our PDF file.
+        title.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL))
+
+        // below line is used for setting text size
+        // which we will be displaying in our PDF file.
+        title.setTextSize(25F)
+        title.setTextAlign(Paint.Align.LEFT)
+
+        // below line is sued for setting color
+        // of our text inside our PDF file.
+        this.context?.let { ContextCompat.getColor(it, R.color.purple_200) }
+            ?.let { title.setColor(it) }
+
+        // below line is used to draw text in our PDF file.
+        // the first parameter is our text, second parameter
+        // is position from start, third parameter is position from top
+        // and then we are passing our variable of paint which is title.
+        canvas.drawText("Severity Report", 20F, 100F, title)
+        // similarly we are creating another text and in this
+        // we are aligning this text to center of our PDF file.
+        title.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL))
+        this.context?.let { ContextCompat.getColor(it, R.color.black) }
+            ?.let { title.setColor(it) }
+        title.setTextSize(15F)
+
+        // below line is used for setting
+        // our text to center of PDF.
+        title.setTextAlign(Paint.Align.LEFT)
+
+        var content: String = ""
+        for(i in 0 until yAxis1.size){
+            content="DateTime: " + xAxis[i].toString() + " | Eye-Severity: "+
+                    Math.round(yAxis1[i] * 10.0) / 10.0 + " | Mouth-Severity: " + Math.round(yAxis2[i] *10.0)/10.0
+            canvas.drawText(content, 20F, 900F+ i*20, title)
+        }
+
+        //canvas.drawText(content, 396F, 560F, title)
+
+
+        // after adding all attributes to our
+        // PDF file we will be finishing our page.
+        pdfDocument.finishPage(myPage)
+
+        // below line is used to set the name of
+        // our PDF file and its path.
+        val filename = String.format("StrokeReport-%d.pdf", System.currentTimeMillis())
+        val file = File(Environment.getExternalStorageDirectory().absolutePath + "/StrokeImages", filename)
+        try {
+            // after creating a file name we will
+            // write our PDF file to that location.
+            pdfDocument.writeTo(FileOutputStream(file))
+
+            // below line is to print toast message
+            // on completion of PDF generation.
+            Toast.makeText(
+                this.context,
+                "PDF file generated successfully.",
+                Toast.LENGTH_SHORT
+            ).show()
+        } catch (e: IOException) {
+            // below line is used
+            // to handle error
+            e.printStackTrace()
+        }
+        // after storing our pdf to that
+        // location we are closing our PDF file.
+        pdfDocument.close()
     }
 }
