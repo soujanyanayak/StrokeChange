@@ -1,11 +1,13 @@
 package org.tensorflow.strokechange
 
+import android.content.Context
 import android.database.Cursor
 import android.graphics.*
 import android.graphics.pdf.PdfDocument
 import android.graphics.pdf.PdfDocument.PageInfo
 import android.os.Bundle
 import android.os.Environment
+import android.system.Os.mkdir
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -263,6 +265,9 @@ class Report : Fragment(R.layout.fragment_report) {
         val pageHeight = 1120
         val pagewidth = 792
 
+        //val numLinesText = (1120 -200(margin))/ pixel size of the font   ---em versus px versus f for font size
+        //val numLinesText = 45;  //empirically found given fonts chosen below
+
         // two variables for paint "paint" is used
         // for drawing shapes and we will use "title"
         // for adding text in our PDF file.
@@ -339,8 +344,13 @@ class Report : Fragment(R.layout.fragment_report) {
         // below line is used to set the name of
         // our PDF file and its path.
         val filename = String.format("StrokeReport-%d.pdf", System.currentTimeMillis())
-        val file = File(Environment.getExternalStorageDirectory().absolutePath + "/StrokeImages", filename)
+       val file = File(Environment.getExternalStorageDirectory().absolutePath + "/StrokeImages", filename)
+
+     //   val file = File( Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).absolutePath + "/StrokeImages", filename);
+
+
         try {
+
             // after creating a file name we will
             // write our PDF file to that location.
             pdfDocument.writeTo(FileOutputStream(file))

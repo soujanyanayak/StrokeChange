@@ -131,6 +131,8 @@ class Home : Fragment(R.layout.fragment_home), View.OnClickListener {
         }
     }
 
+
+
     /**
      * onClick(v: View?)
      *      Detect touches on the UI components
@@ -215,15 +217,31 @@ class Home : Fragment(R.layout.fragment_home), View.OnClickListener {
     private fun requestPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){
             //Android is 11(R) or above
+
             try {
                 Log.d(TAG, "requestPermission: try")
                 val intent = Intent()
-                intent.action = Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION
-                val uri = Uri.fromParts("package", this.toString(), null)
+
+                intent.action = Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION;
+               // intent.action = Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION
+                val uri = Uri.fromParts("package", this.context?.packageName.toString(), null)
+                startActivityForResult(intent, 2296);
             }
             catch (e: Exception){
                 Log.e(TAG, "requestPermission: ", e)
             }
+
+            /**
+            try {
+                var intent = Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+                intent.addCategory("android.intent.category.DEFAULT");
+                intent.setData(Uri.parse(String.format("package:%s",this.context.packageName)));
+                startActivityForResult(intent, 2296);
+            } catch (e: Exception) {
+                var intent =  Intent();
+                intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                startActivityForResult(intent, 2296);}
+            **/
         }
         else{
             //Android is below 11(R)
@@ -260,6 +278,8 @@ class Home : Fragment(R.layout.fragment_home), View.OnClickListener {
         val file = File("${Environment.getExternalStorageDirectory()}/$folderName")
         //create folder
         val folderCreated = file.mkdir()
+
+        System.out.println("folder created? =" + folderCreated.toString());
 
     }
 
