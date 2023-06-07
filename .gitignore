@@ -1,2 +1,6 @@
 .DS_Store
 /Images
+/application/StrokeChange/app/build/
+.flat
+.dex
+.jar
