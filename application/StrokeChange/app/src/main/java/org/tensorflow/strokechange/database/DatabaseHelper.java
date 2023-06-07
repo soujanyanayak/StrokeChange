@@ -16,6 +16,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DateTime = "datetime";
     public static final String EyeSeverity = "eyeSeverity";
     public static final String MouthSeverity = "mouthSeverity";
+    public static final String ImageFileName = "imageFile";
 
     // Database Information
     static final String DB_NAME = "StrokeDetails.DB";
@@ -25,7 +26,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Creating table query
     private static final String CREATE_TABLE = "create table " + TABLE_NAME + "(" + _ID
-            + " INTEGER PRIMARY KEY AUTOINCREMENT, " + DateTime +" DATETIME DEFAULT CURRENT_TIMESTAMP, " + EyeSeverity + " DOUBLE," + MouthSeverity + " DOUBLE);";
+            + " INTEGER PRIMARY KEY AUTOINCREMENT, " + DateTime +" DATETIME DEFAULT CURRENT_TIMESTAMP, " + EyeSeverity + " DOUBLE," + MouthSeverity + " DOUBLE, "+
+            ImageFileName + " TEXT);";
 
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);

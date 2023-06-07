@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class Actions {
 
-    public void saveToGallery(Bitmap bitmap){
+    public void saveToGallery(Bitmap bitmap, String fileName){
         Log.d("saveToGallery", bitmap.toString());
 
         FileOutputStream outputStream = null;
@@ -21,8 +21,8 @@ public class Actions {
         File dir = new File(file.getAbsolutePath() + "/StrokeImages");
         dir.mkdirs();
 
-        String filename = String.format("%d.png",System.currentTimeMillis());
-        File outfile = new File(dir,filename);
+//        String filename = String.format("%s.pn"fileName);
+        File outfile = new File(dir,fileName);
 
         try{
             outputStream = new FileOutputStream(outfile);

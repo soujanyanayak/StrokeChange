@@ -12,7 +12,6 @@ import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.database.Cursor
 import android.graphics.*
 import android.net.Uri
 import android.os.Build
@@ -77,6 +76,9 @@ class Home : Fragment(R.layout.fragment_home), View.OnClickListener {
     private lateinit var saveImageButton: Button
 
     var dbManager = DBManager(this.context)
+
+    var eye: Double = 0.0
+    var mouth: Double = 0.0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -192,17 +194,31 @@ class Home : Fragment(R.layout.fragment_home), View.OnClickListener {
         }
         // Draw the detection result on the bitmap and show it.
         val imgWithResult = drawDetectionResult(bitmap, resultToDisplay)
+
         Log.d("bitmap", imgWithResult.toString())
 
         this.activity?.runOnUiThread{
+            saveImageButton.isEnabled = true
             inputImageView.setImageBitmap(imgWithResult)
             saveImageButton.visibility = View.VISIBLE
 
             saveImageButton.setOnClickListener(){
                 if (checkPermission()){
                     Log.d(TAG, "onCreate: Permission already granted, create folder")
-                    var actions = Actions()
-                    actions.saveToGallery(imgWithResult)
+                    // SC : Insert into database
+                    val fileName = System.currentTimeMillis().toString()+".png"
+
+                    dbManager.insert(eye,mouth,fileName)
+                    dbManager.close()
+
+                    saveImageButton.isEnabled = false
+
+                    val actions = Actions()
+
+                    actions.saveToGallery(imgWithResult, fileName)
+
+
+
                 } else{
                     Log.d(TAG, "onCreate: Permission was not granted, request")
                     requestPermission()
@@ -509,8 +525,7 @@ class Home : Fragment(R.layout.fragment_home), View.OnClickListener {
 
         dbManager = DBManager(this.context)
         dbManager.open()
-        var eye = 0.0
-        var mouth = 0.0
+
 
 
         detectionResults.forEach {
@@ -530,6 +545,8 @@ class Home : Fragment(R.layout.fragment_home), View.OnClickListener {
 
             if("eye" in it.text){
                 eye = output.toDouble()
+
+
             }
             else if("mouth" in it.text){
                 mouth = output.toDouble()
@@ -561,8 +578,8 @@ class Home : Fragment(R.layout.fragment_home), View.OnClickListener {
         }
 
         // SC : Insert into database
-        dbManager.insert(eye,mouth)
-        dbManager.close()
+//        dbManager.insert(eye,mouth)
+//        dbManager.close()
 
         return outputBitmap
     }
