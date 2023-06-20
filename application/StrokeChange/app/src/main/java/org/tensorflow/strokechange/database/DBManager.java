@@ -33,7 +33,7 @@ public class DBManager {
         dbHelper.close();
     }
 
-    public void insert(double eyeSeverity, double mouthSeverity) {
+    public void insert(double eyeSeverity, double mouthSeverity, String fileName) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String strDate = sdf.format(new Date());
 
@@ -41,6 +41,7 @@ public class DBManager {
         contentValue.put(DatabaseHelper.EyeSeverity, eyeSeverity);
         contentValue.put(DatabaseHelper.MouthSeverity, mouthSeverity);
         contentValue.put(DatabaseHelper.DateTime,strDate);
+        contentValue.put(DatabaseHelper.ImageFileName,fileName);
         database.insert(DatabaseHelper.TABLE_NAME, null, contentValue);
     }
 

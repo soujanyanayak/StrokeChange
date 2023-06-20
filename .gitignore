@@ -1,2 +1,6 @@
 .DS_Store
 /Images
+build/
+.flat
+.dex
+.jar

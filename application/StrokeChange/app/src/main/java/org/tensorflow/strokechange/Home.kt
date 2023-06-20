@@ -12,7 +12,6 @@ import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.database.Cursor
 import android.graphics.*
 import android.net.Uri
 import android.os.Build
@@ -78,6 +77,9 @@ class Home : Fragment(R.layout.fragment_home), View.OnClickListener {
 
     var dbManager = DBManager(this.context)
 
+    var eye: Double = 0.0
+    var mouth: Double = 0.0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -130,6 +132,8 @@ class Home : Fragment(R.layout.fragment_home), View.OnClickListener {
             setViewAndDetect(getCapturedImage())
         }
     }
+
+
 
     /**
      * onClick(v: View?)
@@ -190,17 +194,31 @@ class Home : Fragment(R.layout.fragment_home), View.OnClickListener {
         }
         // Draw the detection result on the bitmap and show it.
         val imgWithResult = drawDetectionResult(bitmap, resultToDisplay)
+
         Log.d("bitmap", imgWithResult.toString())
 
         this.activity?.runOnUiThread{
+            saveImageButton.isEnabled = true
             inputImageView.setImageBitmap(imgWithResult)
             saveImageButton.visibility = View.VISIBLE
 
             saveImageButton.setOnClickListener(){
                 if (checkPermission()){
                     Log.d(TAG, "onCreate: Permission already granted, create folder")
-                    var actions = Actions()
-                    actions.saveToGallery(imgWithResult)
+                    // SC : Insert into database
+                    val fileName = System.currentTimeMillis().toString()+".png"
+
+                    dbManager.insert(eye,mouth,fileName)
+                    dbManager.close()
+
+                    saveImageButton.isEnabled = false
+
+                    val actions = Actions()
+
+                    actions.saveToGallery(imgWithResult, fileName)
+
+
+
                 } else{
                     Log.d(TAG, "onCreate: Permission was not granted, request")
                     requestPermission()
@@ -215,15 +233,31 @@ class Home : Fragment(R.layout.fragment_home), View.OnClickListener {
     private fun requestPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){
             //Android is 11(R) or above
+
             try {
                 Log.d(TAG, "requestPermission: try")
                 val intent = Intent()
-                intent.action = Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION
-                val uri = Uri.fromParts("package", this.toString(), null)
+
+                intent.action = Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION;
+               // intent.action = Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION
+                val uri = Uri.fromParts("package", this.context?.packageName.toString(), null)
+                startActivityForResult(intent, 2296);
             }
             catch (e: Exception){
                 Log.e(TAG, "requestPermission: ", e)
             }
+
+            /**
+            try {
+                var intent = Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+                intent.addCategory("android.intent.category.DEFAULT");
+                intent.setData(Uri.parse(String.format("package:%s",this.context.packageName)));
+                startActivityForResult(intent, 2296);
+            } catch (e: Exception) {
+                var intent =  Intent();
+                intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                startActivityForResult(intent, 2296);}
+            **/
         }
         else{
             //Android is below 11(R)
@@ -260,6 +294,8 @@ class Home : Fragment(R.layout.fragment_home), View.OnClickListener {
         val file = File("${Environment.getExternalStorageDirectory()}/$folderName")
         //create folder
         val folderCreated = file.mkdir()
+
+        System.out.println("folder created? =" + folderCreated.toString());
 
     }
 
@@ -489,8 +525,7 @@ class Home : Fragment(R.layout.fragment_home), View.OnClickListener {
 
         dbManager = DBManager(this.context)
         dbManager.open()
-        var eye = 0.0
-        var mouth = 0.0
+
 
 
         detectionResults.forEach {
@@ -510,6 +545,8 @@ class Home : Fragment(R.layout.fragment_home), View.OnClickListener {
 
             if("eye" in it.text){
                 eye = output.toDouble()
+
+
             }
             else if("mouth" in it.text){
                 mouth = output.toDouble()
@@ -541,8 +578,8 @@ class Home : Fragment(R.layout.fragment_home), View.OnClickListener {
         }
 
         // SC : Insert into database
-        dbManager.insert(eye,mouth)
-        dbManager.close()
+//        dbManager.insert(eye,mouth)
+//        dbManager.close()
 
         return outputBitmap
     }

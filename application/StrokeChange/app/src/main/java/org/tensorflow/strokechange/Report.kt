@@ -1,11 +1,14 @@
 package org.tensorflow.strokechange
 
+import android.content.Context
 import android.database.Cursor
 import android.graphics.*
 import android.graphics.pdf.PdfDocument
+import android.graphics.pdf.PdfDocument.Page
 import android.graphics.pdf.PdfDocument.PageInfo
 import android.os.Bundle
 import android.os.Environment
+import android.system.Os.mkdir
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -102,12 +105,14 @@ class Report : Fragment(R.layout.fragment_report) {
         var datapoints: Array<DataPoint?> = arrayOfNulls<DataPoint>(yAxis1.size)
 
         for(i in 0 until yAxis1.size){
-            datapoints[i]=(DataPoint(xAxis[i],yAxis1[i]))
+            // datapoints[i]=(DataPoint(xAxis[i],yAxis1[i]))
+            datapoints[i]=(DataPoint(i.toDouble(),yAxis1[i]))
         }
         val series1: LineGraphSeries<DataPoint?> = LineGraphSeries(datapoints)
 
         for(i in 0 until yAxis2.size){
-            datapoints[i]=(DataPoint(xAxis[i],yAxis2[i]))
+            // datapoints[i]=(DataPoint(xAxis[i],yAxis2[i]))
+            datapoints[i]=(DataPoint(i.toDouble(),yAxis2[i]))
         }
 
 
@@ -193,17 +198,27 @@ class Report : Fragment(R.layout.fragment_report) {
             df.roundingMode = RoundingMode.DOWN
 
             series1.setOnDataPointTapListener(OnDataPointTapListener { series1, dataPoint ->
+//                Toast.makeText(
+//                    this.context,
+//                    "Severity: " + dataPoint.y+ "\nDateTime: " + formatter.format(java.sql.Date(dataPoint.x.toLong()).time),
+//                    Toast.LENGTH_LONG
+//                ).show()
                 Toast.makeText(
                     this.context,
-                    "Severity: " + dataPoint.y+ "\nDateTime: " + formatter.format(java.sql.Date(dataPoint.x.toLong()).time),
+                    "Severity: " + dataPoint.y+ "\nDateTime: " + xAxis[dataPoint.x.toInt()],
                     Toast.LENGTH_LONG
                 ).show()
             })
 
             series2.setOnDataPointTapListener(OnDataPointTapListener { series2, dataPoint ->
+//                Toast.makeText(
+//                    this.context,
+//                    "Severity: " + dataPoint.y + "\nDateTime: " + formatter.format(java.sql.Date(dataPoint.x.toLong()).time),
+//                    Toast.LENGTH_LONG
+//                ).show()
                 Toast.makeText(
                     this.context,
-                    "Severity: " + dataPoint.y + "\nDateTime: " + formatter.format(java.sql.Date(dataPoint.x.toLong()).time),
+                    "Severity: " + dataPoint.y + "\nDateTime: " + xAxis[dataPoint.x.toInt()],
                     Toast.LENGTH_LONG
                 ).show()
             })
@@ -263,6 +278,9 @@ class Report : Fragment(R.layout.fragment_report) {
         val pageHeight = 1120
         val pagewidth = 792
 
+        //val numLinesText = (1120 -200(margin))/ pixel size of the font   ---em versus px versus f for font size
+        //val numLinesText = 45;  //empirically found given fonts chosen below
+
         // two variables for paint "paint" is used
         // for drawing shapes and we will use "title"
         // for adding text in our PDF file.
@@ -291,6 +309,7 @@ class Report : Fragment(R.layout.fragment_report) {
         // one is our variable for paint.
         canvas.drawBitmap(bitmap, null , Rect(10,150,500,800),paint)
         //canvas.drawBitmap(bitmap,bitmap.height.toFloat(),bitmap.width.toFloat(),paint)
+        pdfDocument.finishPage(myPage)
 
         // below line is used for adding typeface for
         // our text which we will be adding in our PDF file.
@@ -323,24 +342,35 @@ class Report : Fragment(R.layout.fragment_report) {
         title.setTextAlign(Paint.Align.LEFT)
 
         var content: String = ""
-        for(i in 0 until yAxis1.size){
-            content="DateTime: " + xAxis[i].toString() + " | Eye-Severity: "+
-                    Math.round(yAxis1[i] * 10.0) / 10.0 + " | Mouth-Severity: " + Math.round(yAxis2[i] *10.0)/10.0
-            canvas.drawText(content, 20F, 900F+ i*20, title)
-        }
+//        val myPage = pdfDocument.startPage(mypageInfo)
+//        for(i in 0 until yAxis1.size){
+//
+//            if(i/40 == 0){
+//                pdfDocument.finishPage(myPage)
+//                pdfDocument.startPage(mypageInfo)
+//            }
+//            content="DateTime: " + xAxis[i].toString() + " | Eye-Severity: "+
+//                    Math.round(yAxis1[i] * 10.0) / 10.0 + " | Mouth-Severity: " + Math.round(yAxis2[i] *10.0)/10.0
+//            canvas.drawText(content, 20F, 900F+ i*20, title)
+//        }
 
         //canvas.drawText(content, 396F, 560F, title)
 
 
         // after adding all attributes to our
         // PDF file we will be finishing our page.
-        pdfDocument.finishPage(myPage)
+
 
         // below line is used to set the name of
         // our PDF file and its path.
         val filename = String.format("StrokeReport-%d.pdf", System.currentTimeMillis())
-        val file = File(Environment.getExternalStorageDirectory().absolutePath + "/StrokeImages", filename)
+       val file = File(Environment.getExternalStorageDirectory().absolutePath + "/StrokeImages", filename)
+
+     //   val file = File( Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).absolutePath + "/StrokeImages", filename);
+
+
         try {
+
             // after creating a file name we will
             // write our PDF file to that location.
             pdfDocument.writeTo(FileOutputStream(file))
