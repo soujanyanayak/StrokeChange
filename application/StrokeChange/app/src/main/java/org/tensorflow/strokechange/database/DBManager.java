@@ -46,8 +46,8 @@ public class DBManager {
     }
 
     public Cursor fetch() {
-        String[] columns = new String[] { DatabaseHelper._ID, DatabaseHelper.DateTime, DatabaseHelper.EyeSeverity, DatabaseHelper.MouthSeverity };
-        Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, columns, null, null, null, null, null);
+        String[] columns = new String[] { DatabaseHelper._ID, DatabaseHelper.DateTime, DatabaseHelper.EyeSeverity, DatabaseHelper.MouthSeverity, DatabaseHelper.ImageFileName };
+        Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, columns, null, null, null, null, DatabaseHelper.DateTime);
         if (cursor != null) {
             cursor.moveToFirst();
         }

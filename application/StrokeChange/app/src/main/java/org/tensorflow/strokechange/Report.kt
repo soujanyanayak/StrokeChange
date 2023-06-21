@@ -1,14 +1,12 @@
 package org.tensorflow.strokechange
 
-import android.content.Context
 import android.database.Cursor
 import android.graphics.*
 import android.graphics.pdf.PdfDocument
-import android.graphics.pdf.PdfDocument.Page
 import android.graphics.pdf.PdfDocument.PageInfo
+import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
-import android.system.Os.mkdir
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,6 +24,7 @@ import com.jjoe64.graphview.series.OnDataPointTapListener
 import org.tensorflow.strokechange.database.DBManager
 import org.tensorflow.strokechange.database.StrokeReport
 import org.tensorflow.strokechange.objectdetection.R
+import org.tensorflow.strokechange.operations.Actions
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -73,6 +72,8 @@ class Report : Fragment(R.layout.fragment_report) {
         var yAxis1: MutableList<Double> = ArrayList()
         var yAxis2: MutableList<Double> = ArrayList()
 
+        val data: MutableList<StrokeReport> = ArrayList()
+
         // SC: Convert java.sql.datetime to java.util.datetime to add it to datapoint.
         // SC: Set timezone to avoid default timezone
         val formatter: DateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
@@ -87,9 +88,11 @@ class Report : Fragment(R.layout.fragment_report) {
                 val eye = cursor.getDouble(index)
                 index = cursor.getColumnIndexOrThrow("mouthSeverity")
                 val mouth = cursor.getDouble(index)
-                var sr = StrokeReport(dateTime,eye,mouth)
+                index = cursor.getColumnIndexOrThrow("imageFile")
+                val image = cursor.getString(index)
                 yAxis1.add(eye)
                 yAxis2.add(mouth)
+                data.add(StrokeReport(dateTime,eye,mouth,image))
                 formatter.parse(dateTime)?.let { xAxis.add(it) }
             }while (cursor.moveToNext())
         }
@@ -240,7 +243,7 @@ class Report : Fragment(R.layout.fragment_report) {
             // Return the resulting Bitmap
 
             // Return the resulting Bitmap
-            this.generatePDF(bitmap,yAxis1,yAxis2,xAxis)
+            this.createPDF(bitmap,data)
         }
 
         return rootView
@@ -390,5 +393,91 @@ class Report : Fragment(R.layout.fragment_report) {
         // after storing our pdf to that
         // location we are closing our PDF file.
         pdfDocument.close()
+    }
+
+    private fun createPDF(
+        bitmap: Bitmap,
+        data: MutableList<StrokeReport>
+    ) {
+
+        // Create a new document.
+        val document = PdfDocument()
+
+// Create the first page.
+        val firstPageInfo = PageInfo.Builder(1000, 1000, 1).create()
+        val firstPage = document.startPage(firstPageInfo)
+        val paint = Paint()
+        val title = Paint()
+        val body = Paint()
+        title.textAlign = Paint.Align.CENTER
+        title.textSize = 15F
+
+        body.textAlign = Paint.Align.LEFT
+        body.textSize = 10F
+
+        val canvas: Canvas = firstPage.canvas
+        canvas.drawText("StrokeChange Report", 396F, 560F, title)
+        canvas.drawBitmap(bitmap, null, Rect(10, 150, 500, 800), paint)
+
+        document.finishPage(firstPage)
+
+        val numPages = (data.size + 1) / 2
+        var index: Int = 0
+        var pagenumber = 2
+        for (i in 0 until numPages) {
+            val newPageInfo = PageInfo.Builder(1000, 1000, pagenumber).create()
+            val newPage = document.startPage(newPageInfo)
+            val newCanvas: Canvas = newPage.canvas
+            var path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString()+"/"+ data[index].ImageFile
+            var bitmap = BitmapFactory.decodeFile(path)
+//            canvas.drawBitmap(bitmap, null , Rect(10,10,500,600),null)
+            var content =
+                "DateTime: " + data[index].DateTime.toString() + " | Eye-Severity: " + data[index].EyeSeverity +
+                        " | Mouth-Severity: " + data[index].MouthSeverity
+            newCanvas.drawText(content, 10F, 400F, body)
+            path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString()+"/"+ data[index+1].ImageFile
+            bitmap = BitmapFactory.decodeFile(path)
+//            canvas.drawBitmap(bitmap, null , Rect(10,450,200,200),paint)
+            content =
+                "DateTime: " + data[index+1].DateTime.toString() + " | Eye-Severity: " + data[index+1].EyeSeverity +
+                        " | Mouth-Severity: " + data[index+1].MouthSeverity
+            newCanvas.drawText(content, 10F, 700F, body)
+
+            document.finishPage(newPage)
+
+            index += 2
+            pagenumber +=1
+
+        }
+
+        val filename = String.format("StrokeReport-%d.pdf", System.currentTimeMillis())
+
+        try {
+            val file = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
+                filename
+            )
+            // after creating a file name we will
+            // write our PDF file to that location.
+            document.writeTo(FileOutputStream(file))
+
+            // below line is to print toast message
+            // on completion of PDF generation.
+            Toast.makeText(
+                context,
+                "PDF file generated successfully.",
+                Toast.LENGTH_SHORT
+            ).show()
+        } catch (e: IOException) {
+            // below line is used
+            // to handle error
+            Toast.makeText(
+                context,
+                "Unable to save to external Storage",
+                Toast.LENGTH_SHORT
+            ).show()
+            e.printStackTrace()
+        }
+
+        document.close()
     }
 }

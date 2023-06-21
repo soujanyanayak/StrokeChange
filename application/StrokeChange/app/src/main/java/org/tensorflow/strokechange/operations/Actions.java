@@ -17,12 +17,13 @@ public class Actions {
         Log.d("saveToGallery", bitmap.toString());
 
         FileOutputStream outputStream = null;
-        File file = Environment.getExternalStorageDirectory();
-        File dir = new File(file.getAbsolutePath() + "/StrokeImages");
-        dir.mkdirs();
+//        File file = Environment.getExternalStorageDirectory();
+//        File dir = new File(file.getAbsolutePath() + "/StrokeImages");
+//        dir.mkdirs();
+
 
 //        String filename = String.format("%s.pn"fileName);
-        File outfile = new File(dir,fileName);
+        File outfile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),fileName);
 
         try{
             outputStream = new FileOutputStream(outfile);
